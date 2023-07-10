@@ -19,7 +19,7 @@ const MobileProfileCard: React.FC<Props> = () => {
             alt="profile_image"
             layout="fill"
             objectFit="cover"
-            className="rounded-2xl"
+            className="relative rounded-2xl"
           />
           <div className="h-fit dark:text-white">
             <div className=" text-xl  italic font-bold">
