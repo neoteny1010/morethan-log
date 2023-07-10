@@ -33,6 +33,10 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.image-smooth {
+  image-rendering: auto;
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
