@@ -24,7 +24,7 @@ const CommentBox: React.FC<Props> = ({ data }) => {
     <div>
       {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
       {CONFIG.cusdis.enable && (
-        <CusdisComponent id={data.id} slug={data.slug} title={data.title} classname="cusdis-custom"/>
+        <CusdisComponent id={data.id} slug={data.slug} title={data.title}"/>
       )}
     </div>
   )
