@@ -4,7 +4,7 @@ const CONFIG = {
     name: "하쿠💕",
     image: "/tumblr_pkbkruXEqV1tcqhjho1_1280.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "A romance enthusiast",
-    bio: "Ode to indolence",
+    bio: "Ode on indolence",
     email: "duck_koo@email.com",
     linkedin: "",
     github: "",
