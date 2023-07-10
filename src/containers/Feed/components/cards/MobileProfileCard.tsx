@@ -24,7 +24,7 @@ const MobileProfileCard: React.FC<Props> = () => {
             </div>
           </div>
           <div className="h-fit dark:text-white">
-            <div className="text-xl italic font-bold">
+            <div className="text-xl font-bold">
               {CONFIG.profile.name}
             </div>
             <div className="text-sm text-gray-500 mb-2 dark:text-gray-400">
@@ -33,7 +33,48 @@ const MobileProfileCard: React.FC<Props> = () => {
             <div className="text-sm">{CONFIG.profile.bio}</div>
           </div>
         </div>
-        {/* ... Rest of your code ... */}
+        {/* <div className="flex">
+          {CONFIG.profile.github && (
+            <a
+              href={`https://github.com/${CONFIG.profile.github}`}
+              rel="noreferrer"
+              target="_blank"
+              className="p-3 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer text-gray-500 dark:text-white "
+            >
+              <AiOutlineGithub className="text-2xl" />
+            </a>
+          )}
+          {CONFIG.profile.instagram && (
+            <a
+              href={`https://www.instagram.com/${CONFIG.profile.instagram}`}
+              rel="noreferrer"
+              target="_blank"
+              className="p-3 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer text-gray-500 dark:text-white"
+            >
+              <AiOutlineInstagram className="text-2xl" />
+            </a>
+          )}
+          {CONFIG.profile.email && (
+            <a
+              href={`mailto:${CONFIG.profile.email}`}
+              rel="noreferrer"
+              target="_blank"
+              className="  overflow-hidden p-3 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer text-gray-500 dark:text-white"
+            >
+              <AiOutlineMail className="text-2xl flex-shrink-0" />
+            </a>
+          )}
+          {CONFIG.profile.linkedin && (
+            <a
+              href={`https://www.linkedin.com/in/${CONFIG.profile.linkedin}`}
+              rel="noreferrer"
+              target="_blank"
+              className="  overflow-hidden p-3 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer text-gray-500 dark:text-white"
+            >
+              <AiFillLinkedin className="text-2xl flex-shrink-0" />
+            </a>
+          )}
+        </div> */}
       </div>
     </div>
   );
