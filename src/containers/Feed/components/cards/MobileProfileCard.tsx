@@ -12,14 +12,16 @@ const MobileProfileCard: React.FC<Props> = () => {
       <div className="p-1 mb-3 dark:text-white">💻 Profile</div>
       <div className="p-2 rounded-2xl bg-white dark:bg-zinc-700 mb-4">
         <div className="flex items-center gap-2">
-          <div className="w-20 h-20 relative rounded-full overflow-hidden">
-            <Image
-              src={CONFIG.profile.image}
-              layout="fill"
-              objectFit="cover"
-              alt="profile_image"
-              className="transform scale-150"
-            />
+          <div className="w-20 h-20 relative rounded-lg overflow-hidden">
+            <div className="aspect-w-1 aspect-h-1">
+              <Image
+                src={CONFIG.profile.image}
+                layout="fill"
+                objectFit="cover"
+                alt="profile_image"
+                className="image-smooth"
+              />
+            </div>
           </div>
           <div className="h-fit dark:text-white">
             <div className="text-xl italic font-bold">
