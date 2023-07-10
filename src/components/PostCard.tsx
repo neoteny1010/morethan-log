@@ -1,28 +1,24 @@
-import Link from "next/link";
-import { CONFIG } from "site.config";
-import { formatDate } from "@/src/libs/utils";
-import Tag from "./Tag";
-import { TPost } from "../types";
-import Image from "next/image";
-import Category from "./Category";
+import Link from "next/link"
+import { CONFIG } from "site.config"
+import { formatDate } from "@/src/libs/utils"
+import Tag from "./Tag"
+import { TPost } from "../types"
+import Image from "next/image"
+import Category from "./Category"
 
 type Props = {
-  data: TPost;
-  selectedCategory?: string;
-};
+  data: TPost
+}
 
-const PostCard: React.FC<Props> = ({ data, selectedCategory }) => {
-  const category = (data.category && data.category?.[0]) || undefined;
-  const isSimpleList = selectedCategory === "daily";
+const PostCard: React.FC<Props> = ({ data }) => {
+  const category = (data.category && data.category?.[0]) || undefined
 
   return (
     <Link href={`/${data.slug}`}>
       <a>
         <article
           key={data.id}
-          className={`relative overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow ${
-            isSimpleList ? "post-list" : "grid-cols-3"
-          }`}
+          className="relative overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow "
         >
           {category && (
             <Category className="absolute top-4 left-4 z-10">
