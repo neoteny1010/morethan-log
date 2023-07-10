@@ -12,7 +12,7 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `NEOTENY(old blog)`,
+      name: `NEOTENY`,
       href: "https://swingby1010.tistory.com",
     },
   ],
