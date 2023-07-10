@@ -1,22 +1,21 @@
-import { Dispatch, SetStateAction, useState } from "react";
 import {
   getAllSelectItemsFromPosts,
   filterPosts,
-} from "@/src/libs/utils/notion";
-import Layout from "@components/Layout";
-import Feed from "@containers/Feed";
-import { CONFIG } from "../../site.config";
-import { NextPageWithLayout } from "./_app";
-import { TCategories, TPosts, TTags } from "../types";
-import { getPosts } from "../libs/apis";
-import { DEFAULT_CATEGORY } from "../constants";
+} from "@/src/libs/utils/notion"
+import Layout from "@components/Layout"
+import Feed from "@containers/Feed"
+import { CONFIG } from "../../site.config"
+import { NextPageWithLayout } from "./_app"
+import { TCategories, TPosts, TTags } from "../types"
+import { getPosts } from "../libs/apis"
+import { DEFAULT_CATEGORY } from "../constants"
 
 export async function getStaticProps() {
   try {
-    const posts = await getPosts();
-    const filteredPost = filterPosts(posts);
-    const tags = getAllSelectItemsFromPosts("tags", filteredPost);
-    const categories = getAllSelectItemsFromPosts("category", filteredPost);
+    const posts = await getPosts()
+    const filteredPost = filterPosts(posts)
+    const tags = getAllSelectItemsFromPosts("tags", filteredPost)
+    const categories = getAllSelectItemsFromPosts("category", filteredPost)
 
     return {
       props: {
@@ -30,38 +29,23 @@ export async function getStaticProps() {
         posts: filteredPost,
       },
       revalidate: 1,
-    };
+    }
   } catch (error) {
-    throw error;
+    throw error
   }
 }
 
 type Props = {
-  categories: TCategories;
-  tags: TTags;
-  posts: TPosts;
-  selectedCategory: string; // Add selectedCategory property
-};
+  categories: TCategories
+  tags: TTags
+  posts: TPosts
+}
 
-const FeedPage: NextPageWithLayout<Props> = ({
-  categories,
-  tags,
-  posts,
-  selectedCategory, // Add selectedCategory destructuring
-}: Props) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
+  return <Feed categories={categories} tags={tags} posts={posts} />
+}
 
-  return (
-    <Feed
-      categories={categories}
-      tags={tags}
-      posts={posts}
-      selectedCategory={selectedCategory}
-      onCategorySelect={setSelectedCategory}
-    />
-  );
-};
-FeedPage.getLayout = function getLayout(page) {
+FeedPage.getLayout = function getlayout(page) {
   return (
     <Layout
       metaConfig={{
@@ -73,7 +57,7 @@ FeedPage.getLayout = function getLayout(page) {
     >
       {page}
     </Layout>
-  );
-};
+  )
+}
 
-export default FeedPage;
+export default FeedPage
