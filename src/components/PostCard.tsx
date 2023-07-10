@@ -1,20 +1,21 @@
-import Link from "next/link"
-import { CONFIG } from "site.config"
-import { formatDate } from "@/src/libs/utils"
-import Tag from "./Tag"
-import { TPost } from "../types"
-import Image from "next/image"
-import Category from "./Category"
+import Link from "next/link";
+import { CONFIG } from "site.config";
+import { formatDate } from "@/src/libs/utils";
+import Tag from "./Tag";
+import { TPost } from "../types";
+import Image from "next/image";
+import Category from "./Category";
 
 type Props = {
   data: TPost;
-   selectedCategory?: string; // Add the selectedCategory prop
-}
+  selectedCategory?: string;
+};
 
 const PostCard: React.FC<Props> = ({ data, selectedCategory }) => {
   const category = (data.category && data.category?.[0]) || undefined;
+  const isSimpleList = selectedCategory === "daily";
 
- return (
+  return (
     <Link href={`/${data.slug}`}>
       <a>
         <article
