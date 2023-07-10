@@ -25,6 +25,9 @@ body::-webkit-scrollbar-thumb {
   background: rgba(45, 170, 219, 0.3);
 }
 
+.cusdis-custom {
+  font-family: "Pretendard";
+}
 .common-no-scroll-bar {
   scrollbar-width: none;
   -ms-overflow-style: none;
