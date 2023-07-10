@@ -36,17 +36,21 @@ export async function getStaticProps() {
   }
 }
 
-type Props = {
+type FeedProps = {
   categories: TCategories;
   tags: TTags;
   posts: TPosts;
+  selectedCategory: string;
+  onCategorySelect: Dispatch<SetStateAction<string>>;
 };
 
-const FeedPage: NextPageWithLayout<Props> = ({
+const Feed: React.FC<FeedProps> = ({
   categories,
   tags,
   posts,
-}: Props) => {
+  selectedCategory,
+  onCategorySelect,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   return (
