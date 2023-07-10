@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "Dolce far niente",
-    description: "...",
+    description: "a romance story review blog",
     theme: "light", // ['light', 'dark', 'auto']
   },
 
