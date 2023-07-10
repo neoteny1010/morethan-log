@@ -4,7 +4,7 @@ import {
   filterPosts,
 } from "@/src/libs/utils/notion";
 import Layout from "@components/Layout";
-import FeedComponent from "@containers/Feed";
+import Feed from "@containers/Feed";
 import { CONFIG } from "../../site.config";
 import { NextPageWithLayout } from "./_app";
 import { TCategories, TPosts, TTags } from "../types";
@@ -40,17 +40,19 @@ type Props = {
   categories: TCategories;
   tags: TTags;
   posts: TPosts;
+  selectedCategory: string; // Add selectedCategory property
 };
 
 const FeedPage: NextPageWithLayout<Props> = ({
   categories,
   tags,
   posts,
+  selectedCategory, // Add selectedCategory destructuring
 }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   return (
-    <FeedComponent
+    <Feed
       categories={categories}
       tags={tags}
       posts={posts}
