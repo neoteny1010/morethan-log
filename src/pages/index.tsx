@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import {
   getAllSelectItemsFromPosts,
   filterPosts,
@@ -42,8 +42,12 @@ type Props = {
   posts: TPosts;
 };
 
-const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
-  const [selectedCategory, setSelectedCategory] = useState("");
+const FeedPage: NextPageWithLayout<Props> = ({
+  categories,
+  tags,
+  posts,
+}: Props) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   return (
     <Feed
@@ -55,7 +59,6 @@ const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
     />
   );
 };
-
 FeedPage.getLayout = function getLayout(page) {
   return (
     <Layout
