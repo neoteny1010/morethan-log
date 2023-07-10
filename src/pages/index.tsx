@@ -4,7 +4,7 @@ import {
   filterPosts,
 } from "@/src/libs/utils/notion";
 import Layout from "@components/Layout";
-import Feed from "@containers/Feed";
+import FeedComponent from "@containers/Feed";
 import { CONFIG } from "../../site.config";
 import { NextPageWithLayout } from "./_app";
 import { TCategories, TPosts, TTags } from "../types";
@@ -36,25 +36,21 @@ export async function getStaticProps() {
   }
 }
 
-type FeedProps = {
+type Props = {
   categories: TCategories;
   tags: TTags;
   posts: TPosts;
-  selectedCategory: string;
-  onCategorySelect: Dispatch<SetStateAction<string>>;
 };
 
-const Feed: React.FC<FeedProps> = ({
+const FeedPage: NextPageWithLayout<Props> = ({
   categories,
   tags,
   posts,
-  selectedCategory,
-  onCategorySelect,
-}) => {
+}: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   return (
-    <Feed
+    <FeedComponent
       categories={categories}
       tags={tags}
       posts={posts}
