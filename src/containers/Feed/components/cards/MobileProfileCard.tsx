@@ -19,7 +19,7 @@ const MobileProfileCard: React.FC<Props> = () => {
                 layout="fill"
                 objectFit="cover"
                 alt="profile_image"
-                className="image-smooth"
+                className="image-smooth trnasform scale-150"
               />
             </div>
           </div>
