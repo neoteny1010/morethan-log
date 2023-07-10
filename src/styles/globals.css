@@ -33,6 +33,13 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
 .image-smooth {
   image-rendering: auto;
 }
