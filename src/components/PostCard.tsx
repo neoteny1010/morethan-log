@@ -20,7 +20,7 @@ const PostCard: React.FC<Props> = ({ data, selectedCategory }) => {
         <article
           key={data.id}
           className={`relative overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow ${
-            category === "Daily" ? "post-list" : ""
+            isSimpleList ? "post-list" : "grid-cols-3"
           }`}
         >
           {category && (
