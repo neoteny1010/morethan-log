@@ -6,14 +6,14 @@ const CONFIG = {
     role: "A romance enthusiast",
     bio: "Ode to indolence",
     email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
+    linkedin: "",
+    github: "",
     instagram: "",
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `NEOTENY(old blog)`,
+      href: "https://swingby1010.tistory.com",
     },
   ],
   // blog setting (required)
